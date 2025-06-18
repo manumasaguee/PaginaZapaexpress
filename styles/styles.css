@@ -521,6 +521,31 @@
     margin-bottom: 0.5rem;
 }
 
+.sobre-nosotros {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+.sobre-nosotros .container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sobre-nosotros h2 {
+    font-size: 2.5em;
+    color: #2e3d59;
+    margin-bottom: 20px;
+}
+
+.sobre-nosotros p {
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+
 @media (max-width: 768px) {
     .detail-content {
         flex-direction: column;
