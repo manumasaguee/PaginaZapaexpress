@@ -6,76 +6,107 @@ $color-footer: #333;
 $color-hover: #64b951;
 $fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
+// Extends
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%transition-default {
+  transition: all 0.3s ease;
+}
+
+// Mixins
+@mixin responsive($breakpoint) {
+  @if $breakpoint == small {
+    @media (max-width: 600px) {@content;}
+  } @else if $breakpoint == medium {
+    @media (max-width: 992px) {@content;}
+  } @else if $breakpoint == large {
+    @media (max-width: 1200px) {@content;}
+  }
+}
+
+@mixin button-style($bg-color, $text-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.7rem;
+  @extend %transition-default;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: $fuente-principal;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $fuente-principal;
 }
 
 body {
-    background-color: $color-fondo;
-    color: $color-texto;
+  background-color: $color-fondo;
+  color: $color-texto;
 }
 
 header {
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .navbar {
+    @extend %flex-center;
     position: relative;
     padding: 1.5rem 2rem;
     min-height: 90px;
 
     .logo {
-    position: absolute;
-    left: 2rem;
+      position: absolute;
+      left: 2rem;
 
-    img {
+      img {
         height: 65px;
         display: block;
-    }
+      }
     }
 
     .menu-toggle {
-    display: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-    position: absolute;
-    right: 1rem;
-    top: 1.5rem;
-    z-index: 101;
+      display: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      position: absolute;
+      right: 1rem;
+      top: 1.5rem;
+      z-index: 101;
     }
 
     .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
+      display: flex;
+      gap: 2rem;
+      list-style: none;
 
-    li {
+      li {
         margin-left: 2rem;
 
         a {
-        text-decoration: none;
-        color: $color-texto;
-        font-weight: 500;
-        transition: color 0.3s;
+          text-decoration: none;
+          color: $color-texto;
+          font-weight: 500;
+          @extend %transition-default;
 
-        &:hover {
+          &:hover {
             color: $color-hover;
+          }
         }
-    }
 
         &.desplegable {
-        position: relative;
+          position: relative;
 
-        .submenu {
+          .submenu {
             display: none;
             position: absolute;
             background-color: white;
@@ -87,188 +118,180 @@ header {
             left: 0;
             z-index: 100;
 
-        li a {
-            display: block;
-            padding: 0.5rem 1.5rem;
-            color: $color-texto;
-            text-decoration: none;
-            white-space: nowrap;
+            li a {
+              display: block;
+              padding: 0.5rem 1.5rem;
+              color: $color-texto;
+              text-decoration: none;
+              white-space: nowrap;
 
-            &:hover {
+              &:hover {
                 background-color: #f0f0f0;
+              }
             }
-            }
-        }
+          }
 
-        &:hover .submenu {
+          &:hover .submenu {
             display: block;
+          }
         }
-        }
+      }
     }
-    }
-}
+  }
 }
 
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/frentedellocal.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 60vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    padding: 0 1rem;
+  @extend %flex-center;
+  flex-direction: column;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/frentedellocal.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  text-align: center;
+  color: white;
+  padding: 0 1rem;
 
-    h1 {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-    }
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
 
-    p {
+  p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     max-width: 700px;
-    }
+  }
 }
 
 .btn {
-    display: inline-block;
-    background-color: $color-principal;
-    color: white;
-    padding: 0.8rem 2rem;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background-color 0.3s, transform 0.3s;
+  display: inline-block;
+  @include button-style($color-principal, white);
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  transition: background-color 0.3s, transform 0.3s;
 
-    &:hover {
-    background-color: $color-principal;
+  &:hover {
     transform: translateY(-3px);
-    }
+  }
 }
 
 .products {
-    padding: 5rem 5%;
-    max-width: 1400px;
-    margin: 0 auto;
+  padding: 5rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
 
-    .section-title {
+  .section-title {
     text-align: center;
     margin-bottom: 3rem;
     font-size: 2rem;
     color: $color-texto;
-}
+  }
 
-.product-grid {
+  .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 2rem;
 
-    .product-card {
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-
-    &:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    @for $i from 1 through 10 {
+      .product-card:nth-child(#{$i}) {
+        animation-delay: 0.1s * $i;
+      }
     }
 
-    .product-img {
+    .product-card {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .product-img {
         height: 250px;
         width: 100%;
         object-fit: cover;
-    }
+      }
 
-    .product-info {
+      .product-info {
         padding: 1.5rem;
 
         .product-title {
-        font-size: 1.2rem;
-        margin-bottom: 0.5rem;
+          font-size: 1.2rem;
+          margin-bottom: 0.5rem;
         }
 
         .ComprarWpp {
-        width: 100%;
-        padding: 0.7rem;
-        background-color: $color-texto;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background-color 0.3s;
+          @include button-style($color-texto, white);
 
-        .Linkwpp {
+          .Linkwpp {
             color: white;
             text-decoration: none;
-                }
-            }
+          }
         }
-        }
+      }
     }
+  }
 }
 
 footer {
-    background-color: $color-footer;
-    color: white;
-    padding: 3rem 5%;
-    text-align: center;
+  background-color: $color-footer;
+  color: white;
+  padding: 3rem 5%;
+  text-align: center;
 
-    .footer-content {
+  .footer-content {
     max-width: 1400px;
     margin: 0 auto;
 
     .social-icons {
-    margin-bottom: 2rem;
+      margin-bottom: 2rem;
 
-    a {
+      a {
         color: white;
         margin: 0 0.5rem;
         font-size: 1.5rem;
-        transition: color 0.3s;
+        @extend %transition-default;
 
         &:hover {
         color: $color-principal;
         }
-    }
+      }
     }
 
     .copyright {
-        opacity: 0.7;
-        font-size: 0.9rem;
+      opacity: 0.7;
+      font-size: 0.9rem;
     }
-    }
+  }
 
-    .Iconowpp {
+  .Iconowpp {
     display: inline-block;
     height: 65px;
     padding: 10px 0 0 10px;
-    }
+  }
 
-    .Iconoig {
+  .Iconoig {
     display: inline-block;
     height: 60px;
     padding: 10px 0 0 10px;
-    }
+  }
 }
 
 .sobre-nosotros {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 4rem 1rem;
-    min-height: 60vh;
-    text-align: center;
+  @extend %flex-center;
+  padding: 4rem 1rem;
+  min-height: 60vh;
+  text-align: center;
 
-    .container {
+  .container {
     max-width: 800px;
-    }
+  }
 }
 
 
