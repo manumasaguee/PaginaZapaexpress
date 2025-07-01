@@ -13,6 +13,7 @@
     <header>
         <nav class="navbar">
             <a href="../index.html" class="logo"> <img src="../assets/logo.png" alt="" id="logo1"></a>
+            <span class="menu-toggle">☰</span>
             <ul class="nav-links">
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="../index.html#productos">Productos</a></li>
@@ -28,17 +29,19 @@
             </ul>
         </nav>
     </header>
+
     <main>
         <div class="section-title">
             <div class="sub-header">
                 <h2 class="contact-card">Contacto</h2>
             </div>
         </div>
+
         <section class="contacto-contenedor">
             <div class="contacto-info">
                 <div>
                     <h3>Dirección</h3>
-                    <p>Bernardo de yrigoyen 148<br>Punta Alta, Buenos Aires, Argentina.</p>
+                    <p>Bernardo de Yrigoyen 148<br>Punta Alta, Buenos Aires, Argentina.</p>
                 </div>
 
                 <div>
@@ -52,12 +55,12 @@
                 </div>
 
                 <div>
-                    <h3>Seguinos</h3> <br>
+                    <h3>Seguinos</h3><br>
                     <a href="#"><img src="../assets/instagram.png" alt="Instagram" class="icono-app"></a>
-                    <a href="#"><img src="../assets/Whatsapp.png" alt="Facebook" class="icono-app"></a>
+                    <a href="#"><img src="../assets/Whatsapp.png" alt="Whatsapp" class="icono-app"></a>
                 </div>
             </div>
-            
+
             <div class="mapa-contacto">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.841702595597!2d-62.08344032364105!3d-38.881863395835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95ed9d59f78cabf9%3A0xc40153024137afbe!2sBernardo%20de%20Irigoyen%20148%2C%20B2109%20Punta%20Alta%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1749230243987!5m2!1ses!2sar"
@@ -65,17 +68,33 @@
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </section>
-
     </main>
-            <footer>
+
+    <footer>
         <div class="footer-content">
             <div class="social-icons">
-                <a href="https://wa.me/2932417171"> <img src="../assets/Whatsapp.png" alt="whatsapp" class="Iconowpp"></a>
-                <a href="#"> <img src="" alt=""></a>
-                <a href="#"> <img src="" alt=""></a>
+                <a href="https://wa.me/2932417171"><img src="../assets/Whatsapp.png" alt="whatsapp" class="Iconowpp"></a>
+                <a href="#"><img src="../assets/instagram.png" alt="Instagram" class="Iconoig"></a>
+                <a href="#"><img src="" alt=""></a>
             </div>
             <p class="copyright">© 2025 ZapaExpress. Todos los derechos reservados.</p>
         </div>
-        </footer>
-    </body>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function () {
+            document.querySelector('.nav-links').classList.toggle('active');
+            this.textContent = document.querySelector('.nav-links').classList.contains('active') ? '✕' : '☰';
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function () {
+                if (window.innerWidth <= 1024) {
+                    document.querySelector('.nav-links').classList.remove('active');
+                    document.querySelector('.menu-toggle').textContent = '☰';
+                }
+            });
+        });
+    </script>
+</body>
 </html>

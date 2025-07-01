@@ -12,13 +12,14 @@
 <body>
     <header>
         <nav class="navbar">
-            <a href="#" class="logo"> <img src="./assets/logo.png" alt="" id="logo1"></a>
-            <ul class="nav-links">
+            <div class="menu-toggle" id="mobile-menu">☰</div>
+            <a href="#" class="logo"> <img src="./assets/logo.png" alt="Zapa Express" id="logo1"></a>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="./index.html">Inicio</a></li>
                 <li><a href="#productos">Productos</a></li>
                 <li><a href="./pages/nosotros.html">Nosotros</a></li>
                 <li><a href="./pages/contacto.html">Contacto</a></li>
-                <li class="desplegable">Tienda ▾
+                <li class="desplegable" id="tienda-dropdown">Tienda ▾
                     <ul class="submenu">
                         <li><a href="./pages/hombre.html">Hombre</a></li>
                         <li><a href="./pages/mujer.html">Mujer</a></li>
@@ -39,7 +40,7 @@
     <main>
         <!-- Productos -->
         <section class="products" id="productos">
-            <h2 class="section-title">Nuestros Productos</h2>
+            <h2 class="section-title">Algunos De Nuestros Productos</h2>
             <div class="product-grid">
                 <!-- Producto 1 -->
                 <div class="product-card">
@@ -161,19 +162,8 @@
                                 whatsapp</a></button>
                     </div>
                 </div>
-
-                <div class="product-card">
-                    <img src="" alt="Zapatillas deportivas" class="product-img">
-                    <div class="product-info">
-                        <h3 class="product-title">Zapatillas Runner Pro</h3>
-                        <button class="ComprarWpp"> <a href="https://wa.me/2932417171" class="Linkwpp">Comprar por
-                                whatsapp</a></button>
-                    </div>
-                </div>
         </section>
     </main>
-
-
 
     <!-- Footer -->
     <footer>
@@ -187,6 +177,40 @@
             <p class="copyright">© 2025 ZapaExpress. Todos los derechos reservados.</p>
         </div>
     </footer>
-</body>
 
+    <!-- Script para el menú hamburguesa -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('mobile-menu');
+            const navLinks = document.getElementById('nav-links');
+            const tiendaDropdown = document.getElementById('tienda-dropdown');
+            
+            // Toggle del menú principal
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                menuToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+            });
+            
+            // Toggle del submenú Tienda en móviles
+            if (tiendaDropdown) {
+                tiendaDropdown.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 992) {
+                        e.preventDefault();
+                        this.classList.toggle('active');
+                    }
+                });
+            }
+            
+            // Cerrar menú al hacer clic en un enlace
+            document.querySelectorAll('#nav-links a').forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 992) {
+                        navLinks.classList.remove('active');
+                        menuToggle.textContent = '☰';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
 </html>
