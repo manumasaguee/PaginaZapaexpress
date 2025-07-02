@@ -7,13 +7,15 @@
     <title>Zapa Express - Calzado de Moda</title>
     <link rel="stylesheet" href="./styles/styles.css">
     <link rel="shortcut icon" href="./assets/iconoZapa.jpg" type="image/x-icon">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
     <header>
         <nav class="navbar">
             <div class="menu-toggle" id="mobile-menu">☰</div>
-            <a href="#" class="logo"> <img src="./assets/logo.png" alt="Zapa Express" id="logo1"></a>
+            <a href="#" class="logo" data-aos="zoom-in" data-aos-duration="1200" data-aos-easing="ease-out-back"><img src="./assets/logo.png" alt="" id="logo1"></a>
+
             <ul class="nav-links" id="nav-links">
                 <li><a href="./index.html">Inicio</a></li>
                 <li><a href="#productos">Productos</a></li>
@@ -34,7 +36,8 @@
     <section class="hero">
         <h1>Calzado de moda para todos</h1>
         <p>Encuentra los zapatos más cómodos y a la moda a los mejores precios.</p>
-        <a href="#productos" class="btn">Ver colección</a>
+        <a href="#productos" class="btn" data-aos="zoom-in-up" data-aos-duration="1000">Ver colección</a>
+
     </section>
 
     <main>
@@ -213,5 +216,10 @@
             });
         });
     </script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
 </body>
 </html>
