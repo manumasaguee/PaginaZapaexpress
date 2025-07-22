@@ -10,21 +10,25 @@
 <body>
     <header>
         <nav class="navbar">
-            <a href="../index.html" class="logo"> <img src="../assets/logo.png" alt="" id="logo1"></a>
-            <ul class="nav-links">
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="../index.html#productos">Productos</a></li>
-                <li><a href="../pages/nosotros.html">Nosotros</a></li>
-                <li><a href="../pages/contacto.html">Contacto</a></li>
-                <li class="desplegable">Tienda ▾
-                    <ul class="submenu">
-                        <li><a href="../pages/hombre.html">Hombre</a></li>
-                        <li><a href="../pages/mujer.html">Mujer</a></li>
-                        <li><a href="../pages/niños.html">Niños</a></li>
-                    </ul>
-                </li>
+    <div class="menu-toggle" id="mobile-menu">☰</div>
+    <a href="../index.html" class="logo"> 
+        <img src="../assets/logo.png" alt="" id="logo1">
+    </a>
+    
+    <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../index.html#productos">Productos</a></li>
+        <li><a href="./nosotros.html">Nosotros</a></li>
+        <li><a href="./contacto.html">Contacto</a></li>
+        <li class="desplegable" id="tienda-dropdown">Tienda ▾
+            <ul class="submenu">
+                <li><a href="./hombre.html">Hombre</a></li>
+                <li><a href="./mujer.html">Mujer</a></li>
+                <li><a href="./niños.html">Niños</a></li>
             </ul>
-        </nav>
+        </li>
+    </ul>
+</nav>
     </header>
         <main>
             <section class="products" id="productos">
@@ -158,5 +162,40 @@
             <p class="copyright">© 2025 ZapaExpress. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <script>
+// Hamburguesa Fix - No modificar otros scripts
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+    const tiendaDropdown = document.getElementById('tienda-dropdown');
+    
+    if(menuToggle && navLinks) {
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            menuToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+    }
+    
+    if(tiendaDropdown) {
+        tiendaDropdown.addEventListener('click', function(e) {
+            if(window.innerWidth <= 992) {
+                e.preventDefault();
+                this.classList.toggle('active');
+            }
+        });
+    }
+    
+    document.querySelectorAll('#nav-links a').forEach(link => {
+        link.addEventListener('click', function() {
+            if(window.innerWidth <= 992) {
+                navLinks.classList.remove('active');
+                if(menuToggle) menuToggle.textContent = '☰';
+            }
+        });
+    });
+});
+</script>
+
     </body>
     </html>

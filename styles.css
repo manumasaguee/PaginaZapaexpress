@@ -307,4 +307,53 @@ footer .Iconoig {
   max-width: 800px;
 }
 
+
+
+/* Hamburguesa Fix - No modificar otros estilos */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.8rem;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    z-index: 1001;
+}
+
+@media (max-width: 992px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        margin-top: 1rem;
+        padding: 1rem;
+        background: white;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links li {
+        margin: 0.5rem 0 !important;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .desplegable .submenu {
+        position: static !important;
+        box-shadow: none !important;
+        display: none;
+        padding-left: 1rem;
+    }
+    
+    .desplegable.active .submenu {
+        display: block !important;
+    }
+}
+
 /*# sourceMappingURL=styles.css.map */

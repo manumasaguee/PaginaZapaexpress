@@ -65,5 +65,39 @@
             });
         });
     </script>
+
+    <script>
+// Hamburguesa Fix - No modificar otros scripts
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+    const tiendaDropdown = document.getElementById('tienda-dropdown');
+    
+    if(menuToggle && navLinks) {
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            menuToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+    }
+    
+    if(tiendaDropdown) {
+        tiendaDropdown.addEventListener('click', function(e) {
+            if(window.innerWidth <= 992) {
+                e.preventDefault();
+                this.classList.toggle('active');
+            }
+        });
+    }
+    
+    document.querySelectorAll('#nav-links a').forEach(link => {
+        link.addEventListener('click', function() {
+            if(window.innerWidth <= 992) {
+                navLinks.classList.remove('active');
+                if(menuToggle) menuToggle.textContent = '☰';
+            }
+        });
+    });
+});
+</script>
 </body>
 </html>
