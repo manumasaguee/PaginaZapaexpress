@@ -510,3 +510,125 @@ footer {
         display: block !important;
     }
 }
+
+
+
+.stats-section {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 30px;
+    width: 250px;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #a9cb22e8;
+    margin-bottom: 10px;
+}
+
+.stat-title {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/*Testimonios */
+.testimonials {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.testimonial-card {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    text-align: right;
+}
+
+/* CTA */
+.cta-section {
+    background: linear-gradient(135deg, #a9cb22e8 0%, #a9cb22e8 100%);
+    padding: 70px 0;
+    text-align: center;
+    color: white;
+}
+
+.cta-button {
+    display: inline-block;
+    background: white;
+    color: #a9cb22e8;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    margin: 10px;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.whatsapp-button {
+    background: #25D366;
+    color: white;
+}
+
+/* Metodos de Pago */
+.payment-methods {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.payment-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.payment-icons img {
+    height: 40px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.payment-icons img:hover {
+    filter: grayscale(0%);
+}
