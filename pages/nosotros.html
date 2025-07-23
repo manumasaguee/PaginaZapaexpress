@@ -3,32 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zapa Express - Nosotros</title>
+    <title>Zapa Express - Sobre Nosotros</title>
     <link rel="stylesheet" href="../styles/styles.css">
-    <link rel="shortcut icon" href="./assets/iconoZapa.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/nosotros.css">
+    <link rel="shortcut icon" href="../assets/iconoZapa.jpg" type="image/x-icon">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <header>
-            <nav class="navbar">
-            <div class="menu-toggle" id="mobile-menu">☰</div>
-            <a href="#" class="logo" data-aos="zoom-in" data-aos-duration="1200" data-aos-easing="ease-out-back"><img src="./assets/logo.png" alt="" id="logo1"></a>
-
-            <ul class="nav-links" id="nav-links">
-                <li><a href="./index.html">Inicio</a></li>
-                <li><a href="./pages/productos.html">Productos</a></li>
-                <li><a href="./pages/nosotros.html">Nosotros</a></li>
-                <li><a href="./pages/contacto.html">Contacto</a></li>
-                <li><a href="./pages/ventas.html">Ventas</a></li>
+        <nav class="navbar">
+            <a href="../index.html" class="logo"><img src="../assets/logo.png" alt="Zapa Express" id="logo1"></a>
+            <span class="menu-toggle">☰</span>
+            <ul class="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../index.html#productos">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="ventas.html">Ventas</a></li>
+            </ul>
         </nav>
     </header>
 
     <main>
-        <section class="sobre-nosotros">
+        <!-- Nosotros -->
+        <section class="nosotros-hero">
+            <h1 data-aos="fade-up">¡Calzado con Actitud!</h1>
+            <p data-aos="fade-up" data-aos-delay="200">Más que zapatos, vendemos comodidad y estilo de vida</p>
+            <div class="zapato-animado" data-aos="zoom-in" data-aos-delay="400">
+                <img src="../assets/logo.png" alt="Zapato animado">
+            </div>
+        </section>
+
+        <!-- Historia -->
+        <section class="nuestra-historia">
             <div class="container">
-                <h2>Sobre Nosotros</h2>
-                <p>
-                    En <strong>ZapaExpress</strong>, creemos que cada detalle cuenta. Nacimos con la idea de ofrecer soluciones simples, creativas y de calidad, combinando pasión, compromiso y una mirada fresca hacia lo que hacemos. Nuestro equipo está formado por personas que disfrutan lo que hacen y se esfuerzan día a día por brindar una experiencia única a cada cliente. Más que un proyecto, esto es nuestra forma de ver el mundo: con propósito, con cercanía y siempre en movimiento.
-                </p>
+                <h2 data-aos="fade-right">Nuestra Historia</h2>
+                <div class="historia-content">
+                    <div class="historia-text" data-aos="fade-right">
+                        <p>Todo comenzó en 2020 con una idea loca: <strong>zapatos cómodos que no sacrificaran el estilo</strong>. Lo que empezó como un pequeño emprendimiento en un garage, hoy es Zapa Express, la marca favorita de miles de argentinos.</p>
+                        <p>Nos apasiona crear calzado que te haga sentir bien por dentro y por fuera. Cada par que vendemos lleva nuestro compromiso de calidad y buen gusto.</p>
+                    </div>
+                    <div class="historia-img" data-aos="fade-left">
+                        <img src="../assets/tresjuntosJP.png" alt="Equipo Zapa Express">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Valores -->
+        <section class="valores">
+            <div class="container">
+                <h2 data-aos="fade-up">Nuestros Valores</h2>
+                <div class="valores-grid">
+                    <div class="valor-card" data-aos="flip-left">
+                        <div class="valor-icon">😊</div>
+                        <h3>Felicidad</h3>
+                        <p>Creemos que unos buenos zapatos pueden cambiar tu día</p>
+                    </div>
+                    <div class="valor-card" data-aos="flip-left" data-aos-delay="200">
+                        <div class="valor-icon">✨</div>
+                        <h3>Calidad</h3>
+                        <p>Materiales premium que duran más que la moda</p>
+                    </div>
+                    <div class="valor-card" data-aos="flip-left" data-aos-delay="400">
+                        <div class="valor-icon">💚</div>
+                        <h3>Autenticidad</h3>
+                        <p>Ser nosotros mismos en cada paso que damos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Equipo -->
+        <section class="equipo">
+            <div class="container">
+                <h2 data-aos="fade-up">El Equipo</h2>
+                <p class="equipo-subtitle" data-aos="fade-up" data-aos-delay="200">Los locos detrás de las zapatillas</p>
+                
+                <div class="equipo-grid">
+                    <div class="miembro" data-aos="zoom-in">
+                        <div class="miembro-img">
+                            <img src="../assets/mauroJP.jpeg" alt="Mauro Masague">
+                        </div>
+                        <h3>Mauro Masague</h3>
+                        <p>CEO & Fundador</p>
+                        <p class="miembro-frase">"Si no te gustan, te devolvemos la sonrisa"</p>
+                    </div>
+                    
+                    <div class="miembro" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="miembro-img">
+                            <img src="../assets/juanaPJ.jpeg" alt="Juana Senzacqua">
+                        </div>
+                        <h3>Juana Senzacqua</h3>
+                        <p>Diseñadora Principal & Arquitecta del local</p>
+                        <p class="miembro-frase">"Comodidad puede rimar con estilo"</p>
+                    </div>
+                    
+                    <div class="miembro" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="miembro-img">
+                            <img src="../assets/marioJP.jpeg" alt="Mario Urrutia">
+                        </div>
+                        <h3>Mario Urrutia</h3>
+                        <p>Experto en Logística</p>
+                        <p class="miembro-frase">"Tus zapatos llegan antes que tus ganas de usarlos"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA  -->
+        <section class="cta-divertido">
+            <div class="container">
+                <h2 data-aos="fade-up">¿Listo para caminar con nosotros?</h2>
+                <p data-aos="fade-up" data-aos-delay="200">Únete a los miles de clientes felices que ya encontraron su calzado ideal</p>
+                <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
+                    <a href="../index.html#productos" class="btn-cta">Ver Productos</a>
+                    <a href="https://wa.me/2932417171" class="btn-cta whatsapp">Hablar por WhatsApp</a>
+                </div>
             </div>
         </section>
     </main>
@@ -37,13 +128,33 @@
         <div class="footer-content">
             <div class="social-icons">
                 <a href="https://wa.me/2932417171"><img src="../assets/Whatsapp.png" alt="whatsapp" class="Iconowpp"></a>
-                <a href="#"><img src="../assets/instagram.png" alt="Instagram" class="Iconoig"></a>
-                <a href="#"> <img src="" alt=""></a>
+                <a href="https://www.instagram.com/zapaexpresspuntaalta/"><img src="../assets/instagram.png" alt="Instagram" class="Iconoig"></a>
             </div>
             <p class="copyright">© 2025 ZapaExpress. Todos los derechos reservados.</p>
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        
+        // Menú hamburguesa
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            this.textContent = document.querySelector('.nav-links').classList.contains('active') ? '✕' : '☰';
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 1024) {
+                    document.querySelector('.nav-links').classList.remove('active');
+                    document.querySelector('.menu-toggle').textContent = '☰';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
     <script>
         document.querySelector('.menu-toggle').addEventListener('click', function () {
             document.querySelector('.nav-links').classList.toggle('active');
@@ -61,7 +172,7 @@
     </script>
 
     <script>
-// Hamburguesa Fix - No modificar otros scripts
+
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('mobile-menu');
     const navLinks = document.getElementById('nav-links');
