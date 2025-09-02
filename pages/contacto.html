@@ -21,7 +21,7 @@
         <li><a href="../index.html">Inicio</a></li>
         <li><a href="../index.html#productos">Productos</a></li>
         <li><a href="./nosotros.html">Nosotros</a></li>
-        <li><a href="./contacto.html">Contacto</a></li>
+        <li><a href="./contacto.html">Contacto y simulador</a></li>
         <li><a href="./ventas.html">Ventas</a></li>
     </ul>
 </nav>
@@ -65,6 +65,26 @@
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </section>
+
+        <!-- Sección del Simulador -->
+        <section class="simulador-section">
+            <div class="container">
+                <h2>Simulador de Compra Zapa Express</h2>
+                <p>Este simulador te permite calcular el precio total de tu compra, aplicar descuentos especiales y simular el proceso de compra en nuestra tienda. Utiliza la consola de tu navegador para interactuar con el simulador (presiona F12 y ve a la pestaña Console).</p>
+                
+                <div class="simulador-info">
+                    <h3>¿Cómo usar el simulador?</h3>
+                    <ol>
+                        <li>Abre la consola de tu navegador (F12 → Console)</li>
+                        <li>Escribe <code>iniciarSimulador()</code> y presiona Enter</li>
+                        <li>Sigue las instrucciones que aparecerán en los cuadros de diálogo</li>
+                        <li>Si no entendes como hacerlo simplemente apretá el botón de abajo y sigue las instrucciones</li>
+                    </ol>
+                    
+                    <button onclick="iniciarSimulador()" class="btn-simulador">Iniciar Simulador</button>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -77,6 +97,8 @@
             <p class="copyright">© 2025 ZapaExpress. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <!-- Referencia al archivo JavaScript -->
+    <script src="../js/simulador.js"></script>
 </body>
 </html>
-

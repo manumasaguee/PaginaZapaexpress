@@ -934,3 +934,197 @@ footer {
     align-items: center;
 }
 
+/* ===== ESTILOS PARA EL SIMULADOR ZAPA EXPRESS ===== */
+.simulador-section {
+    padding: 60px 5%;
+    background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+    border-top: 1px solid #eaeaea;
+    margin-top: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.simulador-section h2 {
+    text-align: center;
+    color: #333;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 15px;
+    font-weight: 700;
+}
+
+.simulador-section h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #a9cb22e8, #25D366);
+    border-radius: 2px;
+}
+
+.simulador-section p {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.simulador-info {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    max-width: 800px;
+    margin: 0 auto;
+    border-left: 5px solid #a9cb22e8;
+}
+
+.simulador-info h3 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.simulador-info h3:before {
+    content: '💡';
+    margin-right: 10px;
+    font-size: 1.8rem;
+}
+
+.simulador-info ol {
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+.simulador-info li {
+    margin-bottom: 12px;
+    line-height: 1.5;
+    color: #555;
+}
+
+.simulador-info code {
+    background: #f3f3f3;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: monospace;
+    color: #e44d26;
+    font-weight: bold;
+}
+
+.btn-simulador {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #a9cb22e8 0%, #8fb41e 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(169, 203, 34, 0.3);
+    margin-top: 20px;
+}
+
+.btn-simulador:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(169, 203, 34, 0.4);
+    background: linear-gradient(135deg, #8fb41e 0%, #7a9c1a 100%);
+}
+
+.btn-simulador:active {
+    transform: translateY(0);
+}
+
+/* Estilos para la consola simulada */
+.consola-simulada {
+    background: #2d2d2d;
+    color: #f8f8f2;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    margin-top: 30px;
+    overflow: auto;
+    max-height: 300px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.consola-linea {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.consola-comando {
+    color: #a9cb22e8;
+}
+
+.consola-resultado {
+    color: #66d9ef;
+}
+
+.consola-error {
+    color: #ff6188;
+}
+
+.consola-exito {
+    color: #a9dc76;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .simulador-section {
+        padding: 40px 5%;
+        margin: 30px 0;
+    }
+    
+    .simulador-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .simulador-info {
+        padding: 20px;
+    }
+    
+    .simulador-info h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Animaciones */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.btn-simulador {
+    animation: pulse 2s infinite;
+}
+
+/* Mejoras visuales para los diálogos del simulador */
+.consola-simulada::-webkit-scrollbar {
+    width: 8px;
+}
+
+.consola-simulada::-webkit-scrollbar-track {
+    background: #1e1e1e;
+    border-radius: 4px;
+}
+
+.consola-simulada::-webkit-scrollbar-thumb {
+    background: #a9cb22e8;
+    border-radius: 4px;
+}
+
+.consola-simulada::-webkit-scrollbar-thumb:hover {
+    background: #8fb41e;
+}
