@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zapa Express - Simulador de Compra</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="shortcut icon" href="../assets/iconoZapa.jpg" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="menu-toggle" id="mobile-menu">☰</div>
+            <a href="../index.html" class="logo"> 
+                <img src="../assets/logo.png" alt="Zapa Express" id="logo1">
+            </a>
+            
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../index.html#productos">Productos</a></li>
+                <li><a href="./nosotros.html">Nosotros</a></li>
+                <li><a href="./contacto.html">Contacto</a></li>
+                <li><a href="./ventas.html">Ventas</a></li>
+                <li><a href="./simulador.html" class="active">Simulador</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="simulador-container">
+        <!-- Sección de Bienvenida -->
+        <section class="bienvenida-section">
+            <div class="container">
+                <h1>Simulador de Compra Zapa Express</h1>
+                <p>¡Arma tu pedido y calcula el total en tiempo real!</p>
+                <div class="estado-carrito" id="estadoCarrito">
+                    <span>🛒 Carrito vacío</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Catálogo de Productos -->
+        <section class="catalogo-section">
+            <div class="container">
+                <h2>Nuestros Productos</h2>
+                <div class="filtros">
+                    <input type="text" id="buscador" placeholder="🔍 Buscar productos..." class="buscador-input">
+                    <select id="filtroCategoria" class="filtro-select">
+                        <option value="todos">Todos los productos</option>
+                        <option value="pantuflas">Pantuflas</option>
+                        <option value="sandalias">Sandalias</option>
+                        <option value="ojotas">Ojotas</option>
+                    </select>
+                </div>
+                
+                <div class="productos-grid" id="productosGrid">
+                    <!-- Los productos se cargan dinámicamente con JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Carrito de Compras -->
+        <section class="carrito-section" id="carritoSection" style="display: none;">
+            <div class="container">
+                <h2>Tu Carrito de Compras</h2>
+                <div class="carrito-contenido">
+                    <div class="carrito-items" id="carritoItems">
+                        <!-- Los items del carrito se cargan dinámicamente -->
+                    </div>
+                    
+                    <div class="carrito-resumen">
+                        <h3>Resumen de Compra</h3>
+                        <div class="resumen-detalle">
+                            <div class="resumen-linea">
+                                <span>Subtotal:</span>
+                                <span id="subtotal">$0</span>
+                            </div>
+                            <div class="descuento-container">
+                                <label for="cuponInput">Cupón de descuento:</label>
+                                <div class="cupon-group">
+                                    <input type="text" id="cuponInput" placeholder="Ej: VIP15">
+                                    <button onclick="aplicarCupon()" class="btn-cupon">Aplicar</button>
+                                </div>
+                                <div id="mensajeCupon" class="mensaje-cupon"></div>
+                            </div>
+                            <div class="resumen-linea total">
+                                <span><strong>Total:</strong></span>
+                                <span id="total"><strong>$0</strong></span>
+                            </div>
+                        </div>
+                        
+                        <div class="acciones-carrito">
+                            <button onclick="vaciarCarrito()" class="btn-vaciar">Vaciar Carrito</button>
+                            <button onclick="finalizarCompra()" class="btn-comprar">Finalizar Compra</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal de Confirmación -->
+        <div id="modalConfirmacion" class="modal">
+            <div class="modal-content">
+                <span class="close-modal" onclick="cerrarModal()">&times;</span>
+                <h3>¡Compra Finalizada!</h3>
+                <div id="modalDetalles"></div>
+                <button onclick="reiniciarSimulador()" class="btn-modal">Realizar Nueva Compra</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-icons">
+                <a href="https://wa.me/2932417171"><img src="../assets/Whatsapp.png" alt="whatsapp" class="Iconowpp"></a>
+                <a href="https://www.instagram.com/zapaexpresspuntaalta/"><img src="../assets/instagram.png" alt="Instagram" class="Iconoig"></a>
+            </div>
+            <p class="copyright">© 2025 ZapaExpress. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/simulador.js"></script>
+</body>
+</html>
+[file content end]
