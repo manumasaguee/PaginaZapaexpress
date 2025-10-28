@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zapa Express - Ventas y Éxitos</title>
+    <title>Zapa Express - Tienda Online</title>
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="../styles/ventas.css">
     <link rel="shortcut icon" href="../assets/iconoZapa.jpg" type="image/x-icon">
@@ -18,87 +19,246 @@
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="../index.html#productos">Productos</a></li>
                 <li><a href="./nosotros.html">Nosotros</a></li>
-                <li><a href="./contacto.html">Contacto y simulador</a></li>
-                <li><a href="./ventas.html">Ventas</a></li>
+                <li><a href="./contacto.html">Contacto</a></li>
+                <li><a href="./ventas.html" class="active">Tienda Online</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <!-- Estadísticas -->
-        <section class="stats-section" data-aos="fade-up">
-            <h2>Nuestros Éxitos en Números</h2>
-            <p>Miles de clientes satisfechos confían en nuestros productos</p>
-            
-            <div class="stats-container">
-                <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="stat-number">+10,000</div>
-                    <div class="stat-title">Pantuflas vendidas</div>
-                </div>
+    <main class="tienda-online">
+        <!-- Header de la Tienda -->
+        <section class="tienda-header">
+            <div class="container">
+                <h1>Tienda Online Zapa Express</h1>
+                <p>Compra tus calzados favoritos de forma rápida y segura</p>
                 
-                <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="stat-number">+8,500</div>
-                    <div class="stat-title">Pares de ojotas</div>
-                </div>
-                
-                <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="stat-number">+6,200</div>
-                    <div class="stat-title">Sandalias entregadas</div>
-                </div>
-                
-                <div class="stat-card" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="stat-number">98%</div>
-                    <div class="stat-title">Clientes satisfechos</div>
+                <div class="tienda-stats">
+                    <div class="stat">
+                        <span class="stat-number" id="contadorProductos">16</span>
+                        <span class="stat-label">Productos</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="contadorCarrito">0</span>
+                        <span class="stat-label">En carrito</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">✓</span>
+                        <span class="stat-label">Envío gratis</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Testimonios -->
-        <section class="testimonials" data-aos="fade-up">
+        <!-- Filtros y Búsqueda -->
+        <section class="filtros-tienda">
             <div class="container">
-                <h2 class="section-title">Lo que dicen nuestros clientes</h2>
-                
-                <div class="testimonial-card" data-aos="fade-right">
-                    <p class="testimonial-text">"Las pantuflas de Zapa Express son las más cómodas que he usado. ¡Ya he comprado 3 pares para toda la familia!"</p>
-                    <p class="testimonial-author">- María G., Bahía Blanca</p>
-                </div>
-                
-                <div class="testimonial-card" data-aos="fade-left">
-                    <p class="testimonial-text">"Increíble calidad por el precio. Mis ojotas han durado dos veranos y todavía están como nuevas."</p>
-                    <p class="testimonial-author">- Carlos M., Buenos Aires</p>
-                </div>
-                
-                <div class="testimonial-card" data-aos="fade-right">
-                    <p class="testimonial-text">"Rápido envío y excelente atención al cliente. Definitivamente volveré a comprar."</p>
-                    <p class="testimonial-author">- Laura P., Córdoba</p>
+                <div class="filtros-container">
+                    <div class="buscador-tienda">
+                        <input type="text" id="buscadorTienda" placeholder="🔍 Buscar productos..." class="buscador-input">
+                    </div>
+                    
+                    <div class="filtros-group">
+                        <select id="filtroCategoriaTienda" class="filtro-select">
+                            <option value="todos">Todas las categorías</option>
+                            <option value="pantuflas">Pantuflas</option>
+                            <option value="sandalias">Sandalias</option>
+                            <option value="ojotas">Ojotas</option>
+                        </select>
+                        
+                        <select id="filtroPrecioTienda" class="filtro-select">
+                            <option value="todos">Todos los precios</option>
+                            <option value="0-7000">Hasta $7.000</option>
+                            <option value="7000-8500">$7.000 - $8.500</option>
+                            <option value="8500-10000">$8.500 - $10.000</option>
+                            <option value="10000-99999">Más de $10.000</option>
+                        </select>
+                        
+                        <select id="filtroOrden" class="filtro-select">
+                            <option value="nombre">Ordenar por nombre</option>
+                            <option value="precio-asc">Precio: menor a mayor</option>
+                            <option value="precio-desc">Precio: mayor a menor</option>
+                            <option value="popularidad">Más populares</option>
+                        </select>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Sección CTA -->
-        <section class="cta-section" data-aos="fade-up">
+        <!-- Catálogo de Productos -->
+        <section class="catalogo-tienda">
             <div class="container">
-                <h2>¿Listo para unirte a nuestros clientes satisfechos?</h2>
-                <p>Descubre por qué miles de personas eligen Zapa Express para su calzado diario</p>
-                <a href="./productos.html" class="cta-button">Ver Productos</a>
-                <a href="https://wa.me/2932417171" class="cta-button whatsapp-button">Contactar por WhatsApp</a>
-            </div>
-        </section>
-
-        <!-- Métodos de Pago -->
-        <section class="payment-methods" data-aos="fade-up">
-            <div class="container">
-                <h2 class="section-title">Métodos de Pago</h2>
-                <p>Aceptamos todas las formas de pago para tu comodidad</p>
-                <div class="payment-icons">
-                    <img src="../assets/mercadopago.png" alt="Mercado Pago">
-                    <img src="../assets/visa.png" alt="Visa">
-                    <img src="../assets/Mastercard.png" alt="Mastercard">
-                    <img src="../assets/efectivo.png" alt="Efectivo">
-                    <img src="../assets/transferencia.png" alt="Transferencia">
+                <div class="productos-tienda-grid" id="productosTiendaGrid">
+                    <!-- Los productos se cargan dinámicamente -->
+                </div>
+                
+                <div class="sin-resultados" id="sinResultados" style="display: none;">
+                    <h3>No se encontraron productos</h3>
+                    <p>Intenta con otros filtros o términos de búsqueda</p>
                 </div>
             </div>
         </section>
+
+        <!-- Carrito Flotante -->
+        <div class="carrito-flotante" id="carritoFlotante">
+            <div class="carrito-header">
+                <h3>🛒 Tu Carrito</h3>
+                <span class="carrito-cantidad" id="carritoCantidadFlotante">0</span>
+            </div>
+            <div class="carrito-items-flotante" id="carritoItemsFlotante">
+                <!-- Items del carrito -->
+            </div>
+            <div class="carrito-total-flotante">
+                <span>Total: $<span id="totalFlotante">0</span></span>
+                <button class="btn-ver-carrito" onclick="mostrarCarritoCompleto()">Ver Carrito</button>
+            </div>
+        </div>
+
+        <!-- Modal del Carrito Completo -->
+        <div id="modalCarrito" class="modal-carrito">
+            <div class="modal-carrito-content">
+                <div class="modal-header">
+                    <h2>Tu Carrito de Compras</h2>
+                    <span class="close-modal" onclick="cerrarModalCarrito()">&times;</span>
+                </div>
+                
+                <div class="modal-body">
+                    <div class="carrito-completo" id="carritoCompleto">
+                        <!-- Carrito completo se carga aquí -->
+                    </div>
+                    
+                    <div class="carrito-vacio" id="carritoVacio">
+                        <p>Tu carrito está vacío</p>
+                        <button class="btn-seguir-comprando" onclick="cerrarModalCarrito()">Seguir comprando</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Checkout -->
+        <div id="modalCheckout" class="modal-checkout">
+            <div class="modal-checkout-content">
+                <span class="close-checkout" onclick="cerrarModalCheckout()">&times;</span>
+                <h2>Finalizar Compra</h2>
+                
+                <div class="checkout-steps">
+                    <div class="step active" id="step1">1. Datos Personales</div>
+                    <div class="step" id="step2">2. Envío</div>
+                    <div class="step" id="step3">3. Pago</div>
+                    <div class="step" id="step4">4. Confirmación</div>
+                </div>
+                
+                <form id="formCheckout" class="checkout-form">
+                    <!-- Paso 1: Datos Personales -->
+                    <div class="checkout-step" id="checkoutStep1">
+                        <h3>Datos Personales</h3>
+                        <div class="form-group">
+                            <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="dni" name="dni" placeholder="DNI" required>
+                        </div>
+                        <button type="button" class="btn-siguiente" onclick="siguientePaso(1)">Siguiente</button>
+                    </div>
+                    
+                    <!-- Paso 2: Envío -->
+                    <div class="checkout-step" id="checkoutStep2" style="display: none;">
+                        <h3>Datos de Envío</h3>
+                        <div class="form-group">
+                            <input type="text" id="direccion" name="direccion" placeholder="Dirección" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="codigoPostal" name="codigoPostal" placeholder="Código Postal" required>
+                        </div>
+                        <div class="form-group">
+                            <select id="metodoEnvio" name="metodoEnvio" required>
+                                <option value="">Seleccionar método de envío</option>
+                                <option value="estandar">Envío estándar (3-5 días) - Gratis</option>
+                                <option value="express">Envío express (24-48h) - $500</option>
+                            </select>
+                        </div>
+                        <div class="checkout-buttons">
+                            <button type="button" class="btn-anterior" onclick="anteriorPaso(2)">Anterior</button>
+                            <button type="button" class="btn-siguiente" onclick="siguientePaso(2)">Siguiente</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Paso 3: Pago -->
+                    <div class="checkout-step" id="checkoutStep3" style="display: none;">
+                        <h3>Método de Pago</h3>
+                        <div class="metodos-pago">
+                            <label class="metodo-pago">
+                                <input type="radio" name="metodoPago" value="mercadopago" required>
+                                <img src="../assets/mercadopago.png" alt="Mercado Pago">
+                                <span>Mercado Pago</span>
+                            </label>
+                            <label class="metodo-pago">
+                                <input type="radio" name="metodoPago" value="tarjeta">
+                                <img src="../assets/visa.png" alt="Tarjeta">
+                                <span>Tarjeta de crédito/débito</span>
+                            </label>
+                            <label class="metodo-pago">
+                                <input type="radio" name="metodoPago" value="transferencia">
+                                <img src="../assets/transferencia.png" alt="Transferencia">
+                                <span>Transferencia bancaria</span>
+                            </label>
+                            <label class="metodo-pago">
+                                <input type="radio" name="metodoPago" value="efectivo">
+                                <img src="../assets/efectivo.png" alt="Efectivo">
+                                <span>Efectivo</span>
+                            </label>
+                        </div>
+                        
+                        <!-- Datos de tarjeta (se muestra solo si se selecciona tarjeta) -->
+                        <div id="datosTarjeta" style="display: none;">
+                            <div class="form-group">
+                                <input type="text" placeholder="Número de tarjeta">
+                            </div>
+                            <div class="form-group-doble">
+                                <input type="text" placeholder="MM/AA">
+                                <input type="text" placeholder="CVV">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" placeholder="Nombre en la tarjeta">
+                            </div>
+                        </div>
+                        
+                        <div class="checkout-buttons">
+                            <button type="button" class="btn-anterior" onclick="anteriorPaso(3)">Anterior</button>
+                            <button type="button" class="btn-siguiente" onclick="siguientePaso(3)">Siguiente</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Paso 4: Confirmación -->
+                    <div class="checkout-step" id="checkoutStep4" style="display: none;">
+                        <h3>Resumen del Pedido</h3>
+                        <div class="resumen-pedido" id="resumenPedido">
+                            <!-- Resumen se carga aquí -->
+                        </div>
+                        
+                        <div class="terminos">
+                            <label>
+                                <input type="checkbox" required>
+                                Acepto los <a href="#">términos y condiciones</a> y la <a href="#">política de privacidad</a>
+                            </label>
+                        </div>
+                        
+                        <div class="checkout-buttons">
+                            <button type="button" class="btn-anterior" onclick="anteriorPaso(4)">Anterior</button>
+                            <button type="submit" class="btn-confirmar">Confirmar Pedido</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </main>
 
     <footer>
@@ -111,6 +271,7 @@
         </div>
     </footer>
 
+    <script src="../js/tienda.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init();
@@ -132,3 +293,4 @@
     </script>
 </body>
 </html>
+[file content end]
